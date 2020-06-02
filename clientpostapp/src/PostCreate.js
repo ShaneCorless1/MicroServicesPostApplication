@@ -13,14 +13,13 @@ export default () => {
     }
     return <div>
         <form onSubmit={onSubmit}>
-            <div className="doem-group">
+            <div className="form-group">
                 <label>Title
                 </label>
                 <input value={title} onChange={e => setTitle(e.target.value)} className="form-control" />
 
             </div>
-            <button className="brn btn-primary">
-                Submit</button>
+            <button className="btn btn-primary" style={{marginTop:"10px"}}> Submit</button>
         </form>
     </div>
 }
