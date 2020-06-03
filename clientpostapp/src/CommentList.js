@@ -1,11 +1,21 @@
 import React from 'react';
-
 export default ({ comments }) => {
- 
-
-
   const renderedComments = comments.map(comment => {
-    return <li key={comment.id}>{comment.content}</li>;
+    let content;
+    switch(comment.status){
+      case 'approved':
+        content =comment.content
+        break;
+        case 'rejected':
+          content = 'Comment is rejected'
+          break;
+          default:
+            content = 'Awaiting Approva;'
+            break;
+
+    }
+
+    return <li key={comment.id}>{content}</li>;
   });
 
   return <ul>{renderedComments}</ul>;
